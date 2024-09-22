@@ -19,4 +19,10 @@ app.use(cookieParser())
 
 
 
+//routes
+import userRouter from "./routes/user.routes.js"
+
+//routes declaration 
+// /api/v1/ is the base path url of our route
+app.use("/api/v1/users", userRouter)
 export {app}
