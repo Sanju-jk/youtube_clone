@@ -56,7 +56,7 @@ userSchema.pre("save", async function (next) {
     //checking if password field is not modified in the schema/model
     if (!this.isModified("password")) return next(); // goes to next middleware
 
-    this.password = bcrypt.hash(this.password, 10)
+    this.password = await bcrypt.hash(this.password, 10)
     next()
 })
 
